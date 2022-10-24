@@ -12,6 +12,20 @@ Fornecedor: {{ $fornecedores[0]['nome'] }}
 <br>
 Status: {{ $fornecedores[0]['status'] }}
 <br>
+
+@isset($fornecedores[1]['cnpj'])
+    {{ $fornecedores[1]['cnpj'] }}
+@endisset)
+
+@empty($teste)
+    Vazio
+@endempty
+
+@empty($fornecedores[0]['cnpj'])
+    - Vazio
+    <br>
+@endempty
+
 @if( !($fornecedores[0]['status'] == 'S') )
     Fornecedor inativo
 @endif
